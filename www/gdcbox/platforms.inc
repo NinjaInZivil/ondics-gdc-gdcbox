@@ -14,24 +14,19 @@
     else if (preg_match('/linux srv1/i',$system_out))
         $machine_os="ubuntu-turnkey";
     else if (preg_match('/linux lamp/i',$system_out))
-        $machine_os="lamp-stack";
+        $machine_os="ubuntu-turnkey";
     else
         die("error: platform unsupported\n");
 
     switch ($machine_os) {
         case 'ubuntu-turnkey':
-            $env["basepath"] = "/home/clauss/git-repos/ondics-gdc-gdcbox/www";    
+            $env["basepath"] = "/var/www/gdcbox/ondics-gdc-gdcbox/www";    
             $env["baseurl"] = "/gdcbox";
             break;
         case 'raspberry-pi':
             $env["basepath"] = "/var/www/gdcbox/ondics-gdc-gdcbox/www";
             $env["baseurl"] = "/gdcbox";
             break;
-        case 'raspberry-pi':
-            $env["basepath"] = "/var/www/gdcbox/ondics-gdc-gdcbox/www";
-            $env["baseurl"] = "/gdcbox";
-            break;
-        default:
     }
     
     // *** now complete paths & urls
