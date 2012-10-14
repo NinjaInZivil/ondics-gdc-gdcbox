@@ -12,7 +12,9 @@
     else if (preg_match('/openwrt/i',$system_out))
         $machine_os="openwrt";
     else if (preg_match('/linux srv1/i',$system_out))
-        $machine_os="ubuntu-turnkey";            
+        $machine_os="ubuntu-turnkey";
+    else if (preg_match('/linux lamp/i',$system_out))
+        $machine_os="lamp-stack";
     else
         die("error: platform unsupported\n");
 
@@ -25,7 +27,10 @@
             $env["basepath"] = "/var/www/gdcbox/ondics-gdc-gdcbox/www";
             $env["baseurl"] = "/gdcbox";
             break;
-
+        case 'raspberry-pi':
+            $env["basepath"] = "/var/www/gdcbox/ondics-gdc-gdcbox/www";
+            $env["baseurl"] = "/gdcbox";
+            break;
         default:
     }
     
